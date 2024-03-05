@@ -165,8 +165,6 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
-
-
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
     extract () {
