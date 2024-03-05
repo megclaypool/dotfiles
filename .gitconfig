@@ -1,0 +1,16 @@
+[user]
+	name = Meg Claypool
+	email = margaret.claypool@gmail.com
+[core]
+	editor = code --wait
+[color]
+	ui = true
+[credential]
+	helper = osxkeychain
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[pull]
+	ff = only
+	rebase = merges

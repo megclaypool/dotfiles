@@ -20,9 +20,8 @@ export DOCKER_HOST="unix://${HOME}/.docker/run/docker.sock"
 # Make sure the terminal can find python2
 PATH=$(pyenv root)/shims:$PATH
 
-
 # Make sure the terminal can find ruby apps
-export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
 
 # Make sure the terminal can find composer & cgr apps
 export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -62,7 +61,7 @@ load-nvmrc
 
 
 # To activate powerlevel10k, add the following line to .zshrc:
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 plugins=(zsh-nvm)
 
@@ -109,35 +108,10 @@ source $ZSH/oh-my-zsh.sh
 alias xyzzy="echo 'Nothing happens'"
 
 
-
-
-# These improved ls functions depend on the
-# gnu command line tools (brew install coreutils)
-
-# ls_was_taken() {
-#   if command -v colorls >/dev/null
-#   then
-#       colorls -A --dark --sort-dirs --gs
-#   else
-#       # /bin/ls -AG
-#       gls --almost-all --classify --color --format=across --group-directories-first
-#   fi
-# }
-
-# lll() {
-#   if command -v colorls >/dev/null
-#   then
-#       colorls -Al --dark --sort-dirs --gs --long --report
-#   else
-#       # /bin/ls -AGl
-#       gls --almost-all --classify --color --group-directories-first -l
-#   fi
-# }
-
 lll() {
-  if command -v exa >/dev/null
+  if command -v eza >/dev/null
   then
-      exa --icons --all --group-directories-first --long --git --header
+      eza --icons --all --group-directories-first --long --git --header
   else
       # /bin/ls -AGl
       gls --almost-all --classify --color --group-directories-first -l
